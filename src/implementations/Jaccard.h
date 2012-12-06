@@ -1,6 +1,8 @@
 #ifndef LAC_DIFFERENCE_JACCARD_H
 #define LAC_DIFFERENCE_JACCARD_H 1
+
 #include "../base.h"
+
 namespace LAC {
   namespace Difference {
     template<typename T>
@@ -16,7 +18,7 @@ namespace LAC {
       T Diff(const va_t& a, const va_t& b) const {
 	T some = a.size(), both = 0;
 	for(size_t i = 0; i < a.size(); ++i){
-	  T tmpa = abs(a[i]), tmpb = abs(b[i]);
+	  T tmpa = std::fabs(a[i]), tmpb = std::fabs(b[i]);
 	  if(tmpa < m_eps && tmpb < m_eps)
 	    some--;
 	  else
